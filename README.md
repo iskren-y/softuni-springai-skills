@@ -49,7 +49,7 @@ export TELEGRAM_BOT_API_KEY=your_telegram_key
 export BRAVE_API_KEY=your_brave_key
 export COMPANYBOOK_API_KEY=your_companybook_key
 
-./gradlew assemble
+./gradlew clean build
 
 docker-compose up --build
 ```

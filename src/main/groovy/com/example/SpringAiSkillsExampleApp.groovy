@@ -58,7 +58,7 @@ class SpringAiSkillsExampleApp {
     ChatClient chatClient(ChatModel chatModel) {
         ChatClient webFetchChat = ChatClient.builder(chatModel).build()
 
-        ChatClient chatClient = ChatClient.builder(chatModel)
+        ChatClient.builder(chatModel)
                 .defaultSystem(systemInstruction)
                 .defaultToolCallbacks(
                         SkillsTool.builder().addSkillsResources(agentSkillsDir).build())
@@ -76,7 +76,5 @@ class SpringAiSkillsExampleApp {
                                 .build()
                 )
                 .build()
-
-        chatClient
     }
 }
