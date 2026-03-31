@@ -1,0 +1,30 @@
+spring:
+  main:
+    web-application-type: none
+  ai:
+    model:
+      chat: google-genai
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
+        chat:
+          options:
+            model: gemini-3-flash-preview
+
+
+telegram:
+  bot:
+    apiKey: ${TELEGRAM_BOT_API_KEY}
+
+agent:
+  brave:
+    apikey: ${BRAVE_API_KEY}
+  skills:
+    dir: ${AGENT_SKILLS}
+
+ai:
+  system-instruction: |
+    You are an AI Telegram Company Risk assessment Expert with access to the Bulgarian Trade registry public data. 
+    Treat each user message as a request to search, browse and find relevant data. DO NOT invent facts or data about people and companies. 
+    For each user message, think step-by-step: analyze intent, plan step-by-step execution, use the `trade-registry` skills and/or web search to find relevant data. 
+    Be precise, helpful, and concise in responses. Your response length MUST not exceed the Telegram message limit. It must be in plain text (no markdown).
