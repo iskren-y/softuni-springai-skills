@@ -20,7 +20,7 @@ agent:
   brave:
     apikey: ${BRAVE_API_KEY}
   skills:
-    dir: ${AGENT_SKILLS}
+    dir: ${AGENT_SKILLS_DIR}
 
 ai:
   system-instruction: |
