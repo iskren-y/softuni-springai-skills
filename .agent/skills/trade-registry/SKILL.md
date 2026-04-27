@@ -1,5 +1,5 @@
 ---
-name: trade-registry-analyst
+name: analyst
 description: Retrieves Bulgarian company and person data from the public CompanyBook.BG Trade Registry API. Use when user asks for data on individuals and/or business entities in Bulgaria.
 ---
 

@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
-import org.springframework.core.io.Resource
 import org.springframework.core.io.ResourceLoader
 
 import java.util.concurrent.ExecutorService
@@ -29,7 +28,7 @@ class SpringAiSkillsExampleApp {
     String braveApiKey
 
     @Value('${agent.skills.dir}')
-    List<Resource> agentSkillsDir
+    String agentSkillsDir
 
     @Value('${ai.system-instruction}')
     String systemInstruction
@@ -61,7 +60,7 @@ class SpringAiSkillsExampleApp {
         ChatClient.builder(chatModel)
                 .defaultSystem(systemInstruction)
                 .defaultToolCallbacks(
-                        SkillsTool.builder().addSkillsResources(agentSkillsDir).build())
+                        SkillsTool.builder().addSkillsDirectory(agentSkillsDir).build())
                 .defaultTools(
                         FileSystemTools.builder().build(),
                         ShellTools.builder().build(),

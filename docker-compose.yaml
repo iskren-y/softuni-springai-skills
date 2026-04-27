@@ -9,7 +9,7 @@ services:
       - TELEGRAM_BOT_API_KEY=${TELEGRAM_BOT_API_KEY}
       - BRAVE_API_KEY=${BRAVE_API_KEY}
       - COMPANYBOOK_API_KEY=${COMPANYBOOK_API_KEY}
-      - AGENT_SKILLS_DIR=file:/app/.agent/skills
+      - AGENT_SKILLS_DIR=.agent/skills
     networks:
       - app-network
     volumes:
